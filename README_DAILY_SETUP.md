@@ -13,7 +13,7 @@ these are the instructions on how to activate your environment and run queries. 
 
 ### actively working in this repo
 
-this repo has two databases, one that is for modeling within vsc (write-database), and one that is for viewing/editing in the database management tool (dmt, mine is dbeaver) (view-database). to run models use standard dbt commands, but if you want to examine them in the dmt you need to run the script that updates the view-database. if you connect to the write-database instead of the view-database the terminal will send you into an error-loop and the dmt won't let you run queries. so make sure you keep up your two steps as you work:
+this repo has two databases, one that is for modeling within vsc (write-database), and one that is for viewing/editing in the database management tool (dmt, mine is dbeaver) (view-database). to run models use standard dbt commands, but if you want to examine them in the dmt you need to run the script that updates the view-database. if you connect to the write-database instead of the view-database the terminal will send you into an error-loop and the dmt won't let you run queries. so make sure you follow these four steps as you work:
 
 1. make changes in your repo / build models or whatever
 2. run the dbt command to run the query and write into the write-database: `dbt run`
