@@ -1,0 +1,146 @@
+version: 2
+
+models:
+  - name: dim_calendar
+    description: >
+      Calendar dimension containing daily date, week, month, quarter, and year attributes. Includes English and Te Reo names for weekdays and months.
+
+      Te reo weekday and month names include both transliterations, identified by the `_te_reo_arotau` column suffix for loan words, and the `_te_reo` suffix for original words. Macrons are represented using doubled vowels in the model output.
+
+      Te reo references:
+      https://www.maorilanguage.net/maori-words-phrases/days-of-the-week-nga-ra-o-te-wiki/
+      https://www.maorilanguage.net/maori-words-phrases/months-of-the-year-nga-marama-o-te-tau/
+
+    columns:
+      # Date information
+      - name: date_day
+        description: The calendar date represented by this row.
+        tests:
+          - not_null
+          - unique
+
+      - name: prior_date_day
+        description: The calendar date immediately before date_day.
+
+      - name: next_date_day
+        description: The calendar date immediately after date_day.
+
+      - name: prior_year_date_day
+        description: The corresponding calendar date in the previous year.
+
+      - name: prior_year_over_year_date_day
+        description: The previous-year comparison date used for year-over-year analysis.
+
+      # Week and day information
+      - name: day_of_week
+        description: Numeric day of the week using a non-ISO Sunday-start convention.
+
+      - name: day_of_week_iso
+        description: Numeric day of the week using the ISO Monday-start convention, where Monday is 1 and Sunday is 7.
+
+      - name: day_of_week_name
+        description: English name of the weekday, such as Monday.
+
+      - name: day_of_week_name_short
+        description: Abbreviated English name of the weekday, such as Mon.
+
+      - name: day_of_week_name_te_reo_arotau
+        description: Te reo loan-word for the weekday, such as Mane for Monday.
+
+      - name: day_of_week_name_te_reo
+        description: Te reo name for the weekday, such as Raahina for Monday.
+
+      - name: day_of_month
+        description: Numeric day of the month.
+
+      - name: day_of_year
+        description: Numeric day of the year.
+
+      - name: week_start_date
+        description: Start date of the non-ISO calendar week using a Sunday-start convention.
+
+      - name: week_end_date
+        description: End date of the non-ISO calendar week using a Sunday-start convention.
+
+      - name: prior_year_week_start_date
+        description: Start date of the corresponding week in the previous year.
+
+      - name: prior_year_week_end_date
+        description: End date of the corresponding week in the previous year.
+
+      - name: week_of_year
+        description: Week number of the year using the non-ISO week convention.
+
+      - name: iso_week_start_date
+        description: Start date of the ISO week. ISO weeks begin on Monday.
+
+      - name: iso_week_end_date
+        description: End date of the ISO week. ISO weeks end on Sunday.
+
+      - name: prior_year_iso_week_start_date
+        description: Start date of the corresponding ISO week in the previous year.
+
+      - name: prior_year_iso_week_end_date
+        description: End date of the corresponding ISO week in the previous year.
+
+      - name: iso_week_of_year
+        description: ISO week number of the year.
+
+      - name: iso_year_week
+        description: Combined ISO year and week identifier.
+
+      - name: prior_year_week_of_year
+        description:
+          Non-ISO week number associated with the corresponding date in the
+          previous year.
+
+      - name: prior_year_iso_week_of_year
+        description: ISO week number associated with the corresponding date in the previous year.
+
+      # Month information
+      - name: month_of_year
+        description: Numeric month of the year, where January is 1.
+
+      - name: month_name
+        description: Full English name of the month, such as January.
+
+      - name: month_name_short
+        description: Abbreviated English name of the month, such as Jan.
+
+      - name: month_name_te_reo_arotau
+        description: Te reo loan-word for the month, such as Hanuere for January.
+
+      - name: month_name_te_reo
+        description: Te reo name for the month, such as Kohitaatea for January.
+
+      - name: month_start_date
+        description: First calendar date of the month.
+
+      - name: month_end_date
+        description: Last calendar date of the month.
+
+      - name: prior_year_month_start_date
+        description: First date of the corresponding month in the previous year.
+
+      - name: prior_year_month_end_date
+        description: Last date of the corresponding month in the previous year.
+
+      # Quarter information
+      - name: quarter_of_year
+        description: Numeric quarter of the year, from 1 to 4.
+
+      - name: quarter_start_date
+        description: First calendar date of the quarter.
+
+      - name: quarter_end_date
+        description: Last calendar date of the quarter.
+
+      # Year information
+      - name: year_number
+        description: Four-digit calendar year.
+
+      - name: year_start_date
+        description: First calendar date of the year.
+
+      - name: year_end_date
+        description: Last calendar date of the year.
