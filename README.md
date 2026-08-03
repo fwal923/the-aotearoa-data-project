@@ -6,7 +6,7 @@ building the scripts for govt data is quite a labour-intensive task so the repo 
 
 a small disclaimer, i am just a passionate analyst, have no affiliation with the govt, and am working things out as i go. use this repo at your own risk!
 
-feel free to check out my blog / send me a message: https://www.fionastreasurechest.com/
+feel free to check out my blog / send me a message: https://fionastreasurechest.com/
 
 ### using this repo
 
