@@ -1,10 +1,12 @@
 ## welcome to the aotearoa data project!
 
-the idea of this repo is that an analyst has a baseline repo to query public data (government/statistics) from aotearoa new zealand and easily build models with supplementary tables such as dim_calendar. to build the data scripts is quite a labor-intensive task so the repo will grow as i work my way through the different govt agencies. however, i have already added dim_calendar, and the repo can be used to run queries into a database.
+this is a baseline repo set up to enable querying public data (government/statistics) from aotearoa new zealand and build models with supplementary tables such as dim_calendar.
+
+building the scripts for govt data is quite a labour-intensive task so the repo will grow as i work my way through the different govt agencies. however, i have already added dim_calendar, and the repo can be used to run queries into a database.
 
 a small disclaimer, i am just a passionate analyst, have no affiliation with the govt, and am working things out as i go. use this repo at your own risk!
 
-feel free to check out my blog / send me a message: https://fionastreasurechest.com/
+feel free to check out my blog / send me a message: https://www.fionastreasurechest.com/
 
 ### using this repo
 
