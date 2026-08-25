@@ -8,3 +8,5 @@ statsmodels
 plotly
 ipython
 jupyter
+jupysql
+duckdb-engine
